@@ -18,8 +18,8 @@ const schema = a.schema({
       title: a.string().required(),
       description: a.string(),
       isCompleted: a.boolean().required(),
-      userId: a.string().required(), // This is the foreign key
-      user: a.belongsTo('User'), // This creates the relationship
+      userId: a.string().required(),
+      user: a.belongsTo('User'),
     })
     .authorization((allow) => [
       allow.publicApiKey(),
