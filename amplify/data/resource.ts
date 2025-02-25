@@ -7,6 +7,7 @@ const schema = a.schema({
     .model({
       content: a.string(),
       isDone: a.boolean(),
+      isRequired: a.boolean(),
     })
     .authorization((allow) => [
       allow.publicApiKey(),
