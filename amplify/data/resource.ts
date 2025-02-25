@@ -3,23 +3,11 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
 
 const schema = a.schema({
-  User: a
+  Todo: a
     .model({
-      name: a.string().required(),
-      email: a.string().required(),
-    })
-    .authorization((allow) => [
-      allow.publicApiKey(),
-      allow.owner(),
-    ]),
-
-  Task: a
-    .model({
-      title: a.string().required(),
-      description: a.string(),
-      isCompleted: a.boolean().required(),
-      userId: a.string().required(),
-      user: a.belongsTo('User'),
+      content: a.string(),
+      isDone: a.boolean(),
+      requiredTestField: a.string().required(),
     })
     .authorization((allow) => [
       allow.publicApiKey(),
