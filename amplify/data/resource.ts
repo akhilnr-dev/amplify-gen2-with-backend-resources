@@ -16,8 +16,6 @@ const schema = a.schema({
   Task: a
     .model({
       title: a.string().required(),
-      description: a.string(),
-      isCompleted: a.boolean().required(),
       userId: a.id().required(),
       user: a.belongsTo('User', 'userId'),
     })
